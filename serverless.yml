@@ -3,9 +3,9 @@ functions:
     handler: users.handler
     events:
       - s3:
-          bucket: entrada-dados
+          bucket: desafio-final
           event: s3:ObjectCreated:*
           rules:
-            - prefix: uploads/
+            - prefix: entrada-dados/
             - suffix: .json
           existing: true
