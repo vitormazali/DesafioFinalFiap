@@ -1,0 +1,11 @@
+functions:
+  users:
+    handler: users.handler
+    events:
+      - s3:
+          bucket: entrada-dados
+          event: s3:ObjectCreated:*
+          rules:
+            - prefix: uploads/
+            - suffix: .json
+          existing: true
